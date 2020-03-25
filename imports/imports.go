@@ -24,7 +24,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			val := im.Path.Value
 			if importHasPrefix(val, "code.gitea.io") {
 				lvl = 2
-			} else if sliceHasPrefix(val, "xorm.io", "github.com") {
+			} else if strings.Contains(val, ".") {
 				lvl = 3
 			} else {
 				lvl = 1
