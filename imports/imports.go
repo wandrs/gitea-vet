@@ -22,12 +22,12 @@ func run(pass *analysis.Pass) (interface{}, error) {
 		for _, im := range file.Imports {
 			var lvl int
 			val := im.Path.Value
-			if strings.HasPrefix(val, "code.gitea.io") {
-				lvl = 1
-			} else if sliceHasPrefix(val, "xorm.io", "github.com") {
+			if importHasPrefix(val, "code.gitea.io") {
 				lvl = 2
-			} else {
+			} else if sliceHasPrefix(val, "xorm.io", "github.com") {
 				lvl = 3
+			} else {
+				lvl = 1
 			}
 
 			if lvl < level {
@@ -40,9 +40,13 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	return nil, nil
 }
 
+func importHasPrefix(s, p string) bool {
+	return strings.HasPrefix(s, "\""+p)
+}
+
 func sliceHasPrefix(s string, prefixes ...string) bool {
 	for _, p := range prefixes {
-		if strings.HasPrefix(s, p) {
+		if importHasPrefix(s, p) {
 			return true
 		}
 	}
