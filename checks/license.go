@@ -2,7 +2,7 @@
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
 
-package license
+package checks
 
 import (
 	"regexp"
@@ -17,13 +17,13 @@ var (
 	buildTag   = "// +build"
 )
 
-var Analyzer = &analysis.Analyzer{
+var License = &analysis.Analyzer{
 	Name: "license",
 	Doc:  "check for a copyright header.",
-	Run:  run,
+	Run:  runLicense,
 }
 
-func run(pass *analysis.Pass) (interface{}, error) {
+func runLicense(pass *analysis.Pass) (interface{}, error) {
 	for _, file := range pass.Files {
 		if len(file.Comments) == 0 {
 			pass.Reportf(file.Pos(), "Copyright not found")

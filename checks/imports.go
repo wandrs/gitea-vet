@@ -2,7 +2,7 @@
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
 
-package imports
+package checks
 
 import (
 	"strings"
@@ -10,13 +10,13 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
-var Analyzer = &analysis.Analyzer{
+var Imports = &analysis.Analyzer{
 	Name: "imports",
 	Doc:  "check for import order.",
-	Run:  run,
+	Run:  runImports,
 }
 
-func run(pass *analysis.Pass) (interface{}, error) {
+func runImports(pass *analysis.Pass) (interface{}, error) {
 	for _, file := range pass.Files {
 		level := 0
 		for _, im := range file.Imports {

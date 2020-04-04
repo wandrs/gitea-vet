@@ -5,15 +5,13 @@
 package main
 
 import (
+	"gitea.com/jolheiser/gitea-vet/checks"
 	"golang.org/x/tools/go/analysis/unitchecker"
-
-	"gitea.com/jolheiser/gitea-vet/imports"
-	"gitea.com/jolheiser/gitea-vet/license"
 )
 
 func main() {
 	unitchecker.Main(
-		license.Analyzer,
-		imports.Analyzer,
+		checks.Imports,
+		checks.License,
 	)
 }
