@@ -1,4 +1,7 @@
 # gitea-vet
+
+[![Build Status](https://drone.gitea.com/api/badges/jolheiser/gitea-vet/status.svg)](https://drone.gitea.com/jolheiser/gitea-vet)
+
 `go vet` tool for Gitea
 
 | Analyzer | Description                                                         |
