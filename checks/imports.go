@@ -12,7 +12,7 @@ import (
 
 var Imports = &analysis.Analyzer{
 	Name: "imports",
-	Doc:  "check for import order.",
+	Doc:  "check for import order",
 	Run:  runImports,
 }
 

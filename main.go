@@ -14,5 +14,6 @@ func main() {
 	unitchecker.Main(
 		checks.Imports,
 		checks.License,
+		checks.Migrations,
 	)
 }
