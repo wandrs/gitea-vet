@@ -5,7 +5,7 @@
 package main
 
 import (
-	"gitea.com/jolheiser/gitea-vet/checks"
+	"code.gitea.io/gitea-vet/checks"
 
 	"golang.org/x/tools/go/analysis/unitchecker"
 )
