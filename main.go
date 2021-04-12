@@ -15,5 +15,6 @@ func main() {
 		checks.Imports,
 		checks.License,
 		checks.Migrations,
+		checks.ModelsSession,
 	)
 }
