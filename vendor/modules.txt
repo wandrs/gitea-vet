@@ -1,7 +1,11 @@
-# golang.org/x/tools v0.0.0-20200325010219-a49f79bcc224
+# golang.org/x/sys v0.5.0
+## explicit
+# golang.org/x/tools v0.1.12
 ## explicit
 golang.org/x/tools/go/analysis
 golang.org/x/tools/go/analysis/internal/analysisflags
 golang.org/x/tools/go/analysis/internal/facts
 golang.org/x/tools/go/analysis/unitchecker
 golang.org/x/tools/go/types/objectpath
+golang.org/x/tools/internal/analysisinternal
+golang.org/x/tools/internal/typeparams
